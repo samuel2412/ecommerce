@@ -1,5 +1,9 @@
 package br.com.samuel.ecommerce.models;
 
+import java.math.BigInteger;
+import java.util.List;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +16,12 @@ public class Produto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	private String nome, descricao, marca, imagem;
+	private String nome;
+	private String descricao;
+	private String marca;
+	private String imagem;
+	private BigInteger preco;
+
 
 	public int getId() {
 		return id;
@@ -54,11 +63,23 @@ public class Produto {
 		this.imagem = imagem;
 	}
 
+	public BigInteger getPreco() {
+		return preco;
+	}
+
+	public void setPreco(BigInteger preco) {
+		this.preco = preco;
+	}
+
 	@Override
 	public String toString() {
 		return "Produto [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", marca=" + marca + ", imagem="
-				+ imagem + "]";
+				+ imagem + ", preco=" + preco + "]";
 	}
 
+	
+	
+
+	
 	
 }
