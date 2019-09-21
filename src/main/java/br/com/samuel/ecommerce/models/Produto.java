@@ -1,13 +1,14 @@
 package br.com.samuel.ecommerce.models;
 
 import java.math.BigInteger;
-import java.util.List;
+import java.util.Calendar;
 
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Produto {
@@ -22,6 +23,8 @@ public class Produto {
 	private String imagem;
 	private BigInteger preco;
 
+	@DateTimeFormat
+    private Calendar dataAnuncio;
 
 	public int getId() {
 		return id;
@@ -71,12 +74,23 @@ public class Produto {
 		this.preco = preco;
 	}
 
+	
+
+	public Calendar getDataAnuncio() {
+		return dataAnuncio;
+	}
+
+	public void setDataAnuncio(Calendar dataAnuncio) {
+		this.dataAnuncio = dataAnuncio;
+	}
+
 	@Override
 	public String toString() {
 		return "Produto [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", marca=" + marca + ", imagem="
-				+ imagem + ", preco=" + preco + "]";
+				+ imagem + ", preco=" + preco + ", dataAnuncio=" + dataAnuncio + "]";
 	}
 
+	
 	
 	
 

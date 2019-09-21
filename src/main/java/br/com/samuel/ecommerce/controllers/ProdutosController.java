@@ -1,5 +1,8 @@
 package br.com.samuel.ecommerce.controllers;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -37,8 +40,9 @@ public class ProdutosController {
 		if (result.hasErrors()) {
 			return form(produto);
 		}
-		System.out.println("passou");
-
+		
+		
+		produto.setDataAnuncio(Calendar.getInstance());
 		produtoDao.gravar(produto);
 
 		redirectAttributes.addFlashAttribute("sucesso", "Produto cadastrado com sucesso!");

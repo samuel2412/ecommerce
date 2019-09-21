@@ -44,7 +44,9 @@
 				<form:input path="preco" cssClass="form-control"/>
 		        <form:errors path="preco" />
 			</div>
-			
+				
+				<form:hidden path="dataAnuncio" value="10/09/2019" cssClass="form-control"/>
+		       			
 			
 			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form:form>
