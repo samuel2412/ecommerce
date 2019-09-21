@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h1>Casa do Código</h1>
-	<form action="/ecommerce/produtos" method="post">
+	<form action="<c:url value = '/produto' />" method="post">
 		<div>
 			<label>Nome</label> <input type="text" name="nome" />
 		</div>
