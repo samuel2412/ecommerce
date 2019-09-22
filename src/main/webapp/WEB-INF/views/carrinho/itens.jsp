@@ -1,55 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 
-<!DOCTYPE html>
-<html>
-<head>
+<tags:pageTemplate titulo="E-commerce">
+<jsp:attribute name="extraScripts">
+        <script>
+            console.log("Finalização de compra de ${carrinhoCompras.quantidade} itens");
+        </script>
+    </jsp:attribute>
 
-<c:url value="/" var="contextPath" />
-<link rel="stylesheet" href="${contextPath}resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="${contextPath}resources/css/bootstrap-theme.min.css">
+    <jsp:body>
 
-
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-
-<title>Projeto Financiamento de Experimentos</title>
-
-
-
-</head>
-<body>
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-primary"
-			role="navigation">
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarColor01" aria-controls="navbarColor01"
-				aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<div class="collapse navbar-collapse" id="navbarColor01">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item"><a class="nav-link"
-						href='<c:url value="/" />'>Home </a></li>
-					<li class="nav-item"><a class="nav-link"
-						href='<c:url value="/produto/cadastro" />'>Cadastro</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href='<c:url value="/produto/" />'>Consultar </a></li>
-					<li class="nav-item"><a class="nav-link"
-						href='<c:url value="#" />'>Carrinho
-							(${carrinhoCompras.quantidade})</a></li>
-				</ul>
-
-			</div>
-		</nav>
-	</header>
+   
 	<p>
 	<div class="container">
 		<h2>Carrinho</h2>
@@ -109,9 +76,5 @@
 			</tfoot>
 		</table>
 	</div>
-
-
-
-
-</body>
-</html>
+ </jsp:body>
+</tags:pageTemplate>
