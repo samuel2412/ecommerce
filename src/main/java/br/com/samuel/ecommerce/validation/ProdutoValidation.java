@@ -1,6 +1,6 @@
 package br.com.samuel.ecommerce.validation;
 
-import java.math.BigInteger;
+import java.math.BigDecimal;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
@@ -27,7 +27,7 @@ public class ProdutoValidation implements Validator {
 		// java.lang.NumberFormatException
 
 		
-			if ( produto.getPreco()==null || !(produto.getPreco().compareTo(BigInteger.ZERO) > 0)	) {
+			if ( produto.getPreco()==null || !(produto.getPreco().compareTo(BigDecimal.ZERO) > 0)	) {
 				errors.rejectValue("preco", "field.required");
 			}
 		

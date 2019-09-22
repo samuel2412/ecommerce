@@ -8,6 +8,7 @@ import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.datetime.DateFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -31,6 +32,11 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 	    resolver.setExposedContextBeanNames("carrinhoCompras");
 	    
 	    return resolver;
+	}
+	
+	@Bean
+	public RestTemplate restTemplate() {
+	    return new RestTemplate();
 	}
 	
 	@Bean

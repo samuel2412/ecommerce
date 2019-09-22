@@ -59,7 +59,7 @@
 				<h5 class="card-title"></h5>
 				<h6 class="card-subtitle text-muted"></h6>
 			</div>
-			<img style="height: 200px; width: 100%; display: block;"
+			<img style="height: 300px; width: 50%; display: block;"
 				src="${produto.imagem }" alt="Card image">
 
 			
@@ -74,7 +74,7 @@
 						<label class="variant-label"><b>Preço: </b> ${produto.preco }</label></li>
 				
 				<li class="list-group-item"><b>Data do Anúncio: <fmt:formatDate
-							pattern="dd/MM/yyyy HH:mm" value="${experimento.dataAnuncio.time}" />
+							pattern="dd/MM/yyyy HH:mm" value="${produto.dataAnuncio.time}" />
 				</b>
 				<li class="list-group-item">
 					<div class="float-right">

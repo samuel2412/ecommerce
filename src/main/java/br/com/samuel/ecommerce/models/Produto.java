@@ -1,5 +1,6 @@
 package br.com.samuel.ecommerce.models;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Calendar;
 
@@ -21,7 +22,7 @@ public class Produto {
 	private String descricao;
 	private String marca;
 	private String imagem;
-	private BigInteger preco;
+	private BigDecimal preco;
 
 	@DateTimeFormat
     private Calendar dataAnuncio;
@@ -66,11 +67,11 @@ public class Produto {
 		this.imagem = imagem;
 	}
 
-	public BigInteger getPreco() {
+	public BigDecimal getPreco() {
 		return preco;
 	}
 
-	public void setPreco(BigInteger preco) {
+	public void setPreco(BigDecimal preco) {
 		this.preco = preco;
 	}
 
@@ -83,6 +84,8 @@ public class Produto {
 	public void setDataAnuncio(Calendar dataAnuncio) {
 		this.dataAnuncio = dataAnuncio;
 	}
+	
+	
 
 	@Override
 	public String toString() {

@@ -1,8 +1,15 @@
 package br.com.samuel.ecommerce.models;
 
-public class CarrinhoItem {
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+public class CarrinhoItem implements Serializable{
 	
-	 private Produto produto;
+	 /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Produto produto;
 	   
 
 	    public CarrinhoItem(Produto produto) {
@@ -17,6 +24,14 @@ public class CarrinhoItem {
 	        this.produto = produto;
 	    }    
 
+	    
+	    public BigDecimal getPreco() {
+	        return produto.getPreco();
+	    }
+
+	    public BigDecimal getTotal(int quantidade) {
+	        return this.getPreco().multiply(new BigDecimal(quantidade));
+	    }
 	    
 	    @Override
 	    public int hashCode() {
