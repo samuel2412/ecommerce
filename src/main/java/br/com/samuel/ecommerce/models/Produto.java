@@ -26,6 +26,22 @@ public class Produto {
 
 	@DateTimeFormat
     private Calendar dataAnuncio;
+	
+	
+	
+
+	public Produto() {
+	}
+	
+	
+
+	public Produto(String nome, BigDecimal preco) {
+		super();
+		this.nome = nome;
+		this.preco = preco;
+	}
+
+
 
 	public int getId() {
 		return id;
