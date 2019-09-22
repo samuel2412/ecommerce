@@ -7,7 +7,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=UTF-8>
+<c:url value="/" var="contextPath" />
+<link rel="stylesheet" href="${contextPath}resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="${contextPath}resources/css/bootstrap-theme.min.css">
+
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+
 <title>Livros de Java, Android, iPhone, PHP, Ruby e muito mais -
 	Casa do Código</title>
 </head>
