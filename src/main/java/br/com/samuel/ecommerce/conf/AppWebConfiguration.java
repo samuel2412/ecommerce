@@ -8,15 +8,18 @@ import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.datetime.DateFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import br.com.samuel.ecommerce.controllers.HomeController;
 import br.com.samuel.ecommerce.daos.ProdutoDAO;
+import br.com.samuel.ecommerce.models.CarrinhoCompras;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses={HomeController.class,ProdutoDAO.class})
-public class AppWebConfiguration {
+@ComponentScan(basePackageClasses={HomeController.class,ProdutoDAO.class,CarrinhoCompras.class})
+public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 	
 	
 	@Bean
@@ -24,6 +27,9 @@ public class AppWebConfiguration {
 	    InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 	    resolver.setPrefix("/WEB-INF/views/");
 	    resolver.setSuffix(".jsp");
+	    
+	    resolver.setExposedContextBeanNames("carrinhoCompras");
+	    
 	    return resolver;
 	}
 	
@@ -47,6 +53,11 @@ public class AppWebConfiguration {
 	    registrar.registerFormatters(conversionService);
 
 	    return conversionService;
+	}
+	
+	@Override
+	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+		configurer.enable();
 	}
 
 }
