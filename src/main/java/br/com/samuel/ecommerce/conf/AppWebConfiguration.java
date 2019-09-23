@@ -2,6 +2,7 @@ package br.com.samuel.ecommerce.conf;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.cache.CacheManager;
@@ -15,6 +16,8 @@ import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.datetime.DateFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
+import org.springframework.mail.MailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.web.accept.ContentNegotiationManager;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.LocaleResolver;
@@ -115,6 +118,22 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 	@Bean
 	public LocaleResolver localeResolver(){
 	    return new CookieLocaleResolver();
+	}
+	
+	@Bean
+	public MailSender mailSender() {
+		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+		mailSender.setHost("seu servidor smtp");//por exemplo smtp.gmail.com
+		mailSender.setUsername("dxolesa@gmail.com");
+		mailSender.setPassword("a9b8c7d6");
+		mailSender.setPort(587);
+		
+		Properties mailProperties = new Properties();
+		mailProperties.setProperty("mail.smtp.auth", "true");
+		mailProperties.setProperty("mail.smtp.starttls.enable", "true");
+		mailSender.setJavaMailProperties(mailProperties);
+		
+		return mailSender;
 	}
 
 }

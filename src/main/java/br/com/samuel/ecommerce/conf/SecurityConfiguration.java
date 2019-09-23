@@ -24,12 +24,13 @@ public class SecurityConfiguration
 //        .antMatchers("/carrinho/**").permitAll()        
 //        .antMatchers("/produto").hasRole("ADMIN")
 //        .antMatchers("/produto/**").permitAll()
+	    .antMatchers("/resources/**").permitAll()
 //        .antMatchers("/pagamento/**").permitAll()
-        .antMatchers("/**").permitAll()
-	    
+        .antMatchers("/**").hasRole("ADMIN")
+       
         .anyRequest().authenticated()
         .and().formLogin().loginPage("/login")
-            .defaultSuccessUrl("/produto").permitAll()
+            .defaultSuccessUrl("/").permitAll()
         .and().logout()
             .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .permitAll().logoutSuccessUrl("/login");    

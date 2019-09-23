@@ -11,50 +11,65 @@
 <tags:pageTemplate
 	titulo="E-commerce">
 
+ <!-- Page Content -->
+  <div class="container">
 
-	<p>
-	<div class="card mb-3">
-		<form:form
-			action="${s:mvcUrl('CCC#add').arg(0, produto.id ).build() }"
-			method="post" commandName="produto" class="container">
-			<h3 class="card-header">${produto.nome }</h3>
-			<div class="card-body">
-				<h5 class="card-title"></h5>
-				<h6 class="card-subtitle text-muted"></h6>
-			</div>
-			<img style="height: 300px; width: 50%; display: block;"
-				src="${produto.imagem }" alt="Card image">
+    <div class="row">
 
+      <div class="col-lg-3">
+        <h1 class="my-4">Shop Name</h1>
+        <div class="list-group">
+          <a href="#" class="list-group-item active">Category 1</a>
+          <a href="#" class="list-group-item">Category 2</a>
+          <a href="#" class="list-group-item">Category 3</a>
+        </div>
+      </div>
+      <!-- /.col-lg-3 -->
 
-			<div class="card-body">
-				<p class="card-text">Descricão: ${produto.descricao }</p>
-			</div>
-			<ul class="list-group list-group-flush">
-				<li class="list-group-item"><b>Marca:</b> ${produto.marca }</li>
+      <div class="col-lg-9">
 
-				<li class="list-group-item"><label class="variant-label"><b>Preço:
-					</b> ${produto.preco }</label></li>
+        <div class="card mt-4">
+         <img class="d-block img-fluid" src="${produto.imagem }" alt="${produto.nome }" style="width:900px;height:350px;">
+          <div class="card-body">
+            <h3 class="card-title">${produto.nome }</h3>
+            <h4>R$ ${produto.preco }</h4>
+            <p class="card-text">${produto.descricao }</p>
+            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+            4.0 stars
+            <form:form action="${s:mvcUrl('CCC#add').arg(0, produto.id ).build() }" method="post">
+            		<button type="submit" class="btn btn-outline-success">Adicionar ao Carrinho</button>
+            </form:form>
+          </div>
+        </div>
+        <!-- /.card -->
 
-				<li class="list-group-item"><b>Data do Anúncio: <fmt:formatDate
-							pattern="dd/MM/yyyy HH:mm" value="${produto.dataAnuncio.time}" />
-				</b>
-				<li class="list-group-item">
-					<div class="float-right">
-						<a href="<c:url value="/produto" />">
-							<button type="button" class="btn btn-outline-danger">Voltar</button>
-						</a>
-						<button type="submit" class="btn btn-outline-success">Adicionar
-							ao Carrinho</button>
-					</div>
+        <div class="card card-outline-secondary my-4">
+          <div class="card-header">
+            Product Reviews
+          </div>
+          <div class="card-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+            <hr>
+            <a href="#" class="btn btn-success">Leave a Review</a>
+          </div>
+        </div>
+        <!-- /.card -->
 
-				</li>
-			</ul>
+      </div>
+      <!-- /.col-lg-9 -->
 
-			<div class="card-footer text-muted">
-				<br>
-			</div>
-		</form:form>
-	</div>
+    </div>
+
+  </div>
+  <!-- /.container -->
+
 
 
 </tags:pageTemplate>

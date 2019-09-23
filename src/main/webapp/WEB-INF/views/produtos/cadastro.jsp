@@ -11,6 +11,8 @@
 
 
 	<div class="container">
+	
+	
 	<form:form action="${s:mvcUrl('PC#gravar').build() }" method="post" commandName="produto">
 			<div class="form-group">
 				<label>Nome</label>
@@ -45,6 +47,5 @@
 		</form:form>
 	</div>
 
-	
 	
 	</tags:pageTemplate>

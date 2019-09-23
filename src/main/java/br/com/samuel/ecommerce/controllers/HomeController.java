@@ -23,8 +23,10 @@ public class HomeController {
 
         ModelAndView modelAndView = new ModelAndView("home");
         List<Produto> produtos = produtoDao.listar();
+        List<Produto> lastAdd = produtos.subList(Math.max(produtos.size() - 3, 0), produtos.size());
         modelAndView.addObject("produtos", produtos);
-
+        modelAndView.addObject("lastAdd", lastAdd);
+        
         return modelAndView;
     }
 

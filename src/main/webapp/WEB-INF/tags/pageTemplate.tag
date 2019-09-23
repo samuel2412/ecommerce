@@ -9,32 +9,49 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Simulação de e-commerce">
+  <meta name="author" content="Samuel Alves de Almeida">
+
+  <title>E-commerce</title>
+
 <c:url value="/" var="contextPath" />
-<link rel="stylesheet"
-	href="${contextPath}resources/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="${contextPath}resources/css/bootstrap-theme.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="${contextPath }resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ <link href="${contextPath }resources/css/main.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="${contextPath }resources/css/shop-homepage.css" rel="stylesheet">
+  
 
 
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1" />
-	
+   
+
 
 
 </head>
 
+
+
 <body class="${bodyClass}">
 
 	<%@ include file="/WEB-INF/views/cabecalho.jsp"%>
-
+	
 	<jsp:doBody />
+	
 
 	<jsp:invoke fragment="extraScripts"></jsp:invoke>
 
 	<%@ include file="/WEB-INF/views/rodape.jsp"%>
+	
+	
 
 </body>
+
+
 </html>
+
