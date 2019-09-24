@@ -35,34 +35,38 @@ public class PagamentoController {
 	private MailSender sender;
 
 	@RequestMapping(value = "/finalizar", method = RequestMethod.POST)
-	public Callable<ModelAndView> finalizar(@AuthenticationPrincipal Usuario usuario,RedirectAttributes model) {
+	public Callable<ModelAndView> finalizar(@AuthenticationPrincipal Usuario usuario, RedirectAttributes model) {
 		return () -> {
 			String uri = "http://book-payment.herokuapp.com/payment";
 
 			try {
 				String response = restTemplate.postForObject(uri, new DadosPagamento(carrinho.getTotal()),
 						String.class);
-				
-				enviaEmailCompraProduto(usuario);  
-				model.addFlashAttribute("sucesso", response);
+
+				enviaEmailCompraProduto(usuario);
+				model.addFlashAttribute("mensagem", response);
 				System.out.println(response);
-				return new ModelAndView("redirect:/produtos");
+				return new ModelAndView("redirect:/");
 			} catch (HttpClientErrorException e) {
 				e.printStackTrace();
-				model.addFlashAttribute("falha", "Valor maior que o permitido");
-				return new ModelAndView("redirect:/produtos");
+				model.addFlashAttribute("mensagem", "Valor maior que o permitido");
+				return new ModelAndView("redirect:/");
 			}
 		};
 	}
 
 	private void enviaEmailCompraProduto(Usuario usuario) {
-		SimpleMailMessage email = new SimpleMailMessage();
-		email.setSubject("Compra finalizada com sucesso");
-		email.setTo(usuario.getEmail());
-		email.setText("Compra aprovada com sucesso no valor de " + carrinho.getTotal());
-		email.setFrom("compras@casadocodigo.com.br");
+		try {
+			SimpleMailMessage email = new SimpleMailMessage();
+			email.setSubject("Compra finalizada com sucesso");
+			email.setTo(usuario.getEmail());
+			email.setText("Compra aprovada com sucesso no valor de " + carrinho.getTotal());
+			email.setFrom("compras@casadocodigo.com.br");
 
-		sender.send(email);
+			sender.send(email);
+		} catch (Exception e) {
+
+		}
 	}
 
 }

@@ -49,6 +49,9 @@ public class ProdutosController {
 		redirectAttributes.addFlashAttribute("sucesso", "Produto cadastrado com sucesso!");
 		return new ModelAndView("redirect:/produto");
 	}
+	
+
+	
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView listar() {
@@ -69,6 +72,8 @@ public class ProdutosController {
 
 	    return modelAndView;
 	}
+	
+	
 	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {

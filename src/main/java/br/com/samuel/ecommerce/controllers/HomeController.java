@@ -7,6 +7,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.samuel.ecommerce.daos.ProdutoDAO;
 import br.com.samuel.ecommerce.models.Produto;
@@ -21,11 +22,12 @@ public class HomeController {
     @RequestMapping("/")
     public ModelAndView index() {
 
-        ModelAndView modelAndView = new ModelAndView("home");
+        ModelAndView modelAndView = new ModelAndView("index");
         List<Produto> produtos = produtoDao.listar();
         List<Produto> lastAdd = produtos.subList(Math.max(produtos.size() - 3, 0), produtos.size());
         modelAndView.addObject("produtos", produtos);
         modelAndView.addObject("lastAdd", lastAdd);
+       
         
         return modelAndView;
     }

@@ -58,7 +58,7 @@ public class CarrinhoComprasController {
         //System.out.println(carrinho.getTotal());
         model.addFlashAttribute("sucesso", "Pagamento realizado com sucesso");
 
-        return new ModelAndView("redirect:/produto");
+        return new ModelAndView("redirect:/");
     }
     
     @RequestMapping(method=RequestMethod.GET)

@@ -7,7 +7,7 @@
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 
-<tags:pageTemplate titulo="E-commerce">
+<tags:pageTemplate>
 <jsp:attribute name="extraScripts">
         <script>
             console.log("Finalização de compra de ${carrinhoCompras.quantidade} itens");
@@ -65,7 +65,7 @@
 					<td colspan="6"></td>
 					<%-- ${s:mvcUrl('FC#finalizar').build()}  --%>
 					<td>
-						<form:form action="${s:mvcUrl('CCC#finalizar').build() }" method="post">
+						<form:form action="${s:mvcUrl('PC#finalizar').build() }" method="post">
 							<input type="submit" class="checkout" name="checkout" value="Finalizar compra" />
 						</form:form>	
 						</td>

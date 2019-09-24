@@ -7,7 +7,7 @@
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 
-<tags:pageTemplate titulo="E-commerce">
+<tags:pageTemplate>
 
 
 	<div class="container">

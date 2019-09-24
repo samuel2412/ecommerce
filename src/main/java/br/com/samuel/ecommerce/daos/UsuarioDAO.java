@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import br.com.samuel.ecommerce.models.Usuario;
 
+
 @Repository
 public class UsuarioDAO implements UserDetailsService {
 
@@ -29,4 +30,8 @@ public class UsuarioDAO implements UserDetailsService {
 
         return usuarios.get(0);
     }
+
+	public void gravar(Usuario usuario) {
+		manager.persist(usuario);		
+	}
 }

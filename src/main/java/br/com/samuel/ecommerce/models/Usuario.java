@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -23,7 +24,7 @@ public class Usuario implements UserDetails {
 	private String senha;
 	private String nome;
 
-	@OneToMany(fetch = FetchType.EAGER)
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private List<Role> roles = new ArrayList<>();
 
 	public String getEmail() {
@@ -91,6 +92,13 @@ public class Usuario implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		return true;
+	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "Usuario [email=" + email + ", senha=" + senha + ", nome=" + nome + ", roles=" + roles + "]";
 	}
 
 	public String criptrografaSenha(String senha) {

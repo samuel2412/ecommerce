@@ -8,21 +8,39 @@
 	prefix="security"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags"%>
 
-<tags:pageTemplate titulo="E-commerce">
+<tags:pageTemplate>
 
   <!-- Page Content -->
   <div class="container">
+	<b>${mensagem }</b>
 
     <div class="row">
 
       <div class="col-lg-3">
 
-        <h1 class="my-4">Shop Name</h1>
-        <div class="list-group">
-          <a href="#" class="list-group-item">Category 1</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>
-        </div>
+        <h2 class="my-4">E-Commerce</h2>
+        Este é um projeto construído usando SpringMVC,
+			Hibernate, Java, JPA, JSP, Bootstrap, etc..</p>
+		<hr class="my-4">
+		<p>Trata-se de uma aplicação que simula um e-commerce.</p>
+		<p>
+			Atráves de uma conexão a uma api
+			(http://book-payment.herokuapp.com/payment) fornecida pela Alura em
+			seu <a
+				href="https://cursos.alura.com.br/course/spring-mvc-1-criando-aplicacoes-web">curso
+				de SpringMVC</a>, é simulado uma autorização de pagamento.
+		</p>
+		<p>Fazendo login com as credências:
+		<p>Email: <b>admin@admin</b>
+		<p>Senha: <b>123456</b>
+		<p>é possivel cadastrar e consultar uma lista de produtos.
+		<p>Vale lembrar que todas as operações realizadas aqui são para
+			propósitos acadêmicos.
+		<p>
+			O código fonte desta aplicação encontra-se <a
+				href="https://github.com/samuel2412/ecommerce"> aqui</a>.
+		<p>Autor: Samuel Alves de Almeida.
+        
 
       </div>
       <!-- /.col-lg-3 -->

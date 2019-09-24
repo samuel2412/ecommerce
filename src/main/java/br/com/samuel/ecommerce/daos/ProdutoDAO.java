@@ -10,6 +10,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
+import br.com.samuel.ecommerce.models.Comentario;
 import br.com.samuel.ecommerce.models.Produto;
 
 @Repository
@@ -23,6 +24,13 @@ public class ProdutoDAO {
     	System.out.println(produto.getDataAnuncio());
         manager.persist(produto);
     }
+    
+    
+    
+    public void alterarProduto(Produto produto) {	
+    	manager.merge(produto);
+    }
+    
     
     public List<Produto> listar() {
         return manager.createQuery("select p from Produto p", Produto.class)

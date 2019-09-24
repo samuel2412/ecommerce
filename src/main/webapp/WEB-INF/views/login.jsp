@@ -7,7 +7,7 @@
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 
-<tags:pageTemplate titulo="E-commerce" bodyClass="login">
+<tags:pageTemplate bodyClass="login">
 
 <jsp:attribute name="extraScripts">
 <c:url value="/" var="contextPath" />
@@ -89,8 +89,8 @@
 
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="#">
-							Create your Account
+						<a class="txt2" href='<c:url value="/usuario/cadastro" />'>
+							Crie sua Conta
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
 					</div>

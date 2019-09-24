@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,8 +31,8 @@ public class Produto {
 	@DateTimeFormat
     private Calendar dataAnuncio;
 	
-	@ElementCollection
-	private List<Comentario> precos = new ArrayList<>();
+	@ElementCollection(fetch = FetchType.EAGER)
+	private List<Comentario> comentarios = new ArrayList<>();
 	
 	
 
@@ -108,14 +109,17 @@ public class Produto {
 	
 	
 
-	public List<Comentario> getPrecos() {
-		return precos;
+
+
+
+	public List<Comentario> getComentarios() {
+		return comentarios;
 	}
 
 
 
-	public void setPrecos(List<Comentario> precos) {
-		this.precos = precos;
+	public void setComentarios(List<Comentario> comentarios) {
+		this.comentarios = comentarios;
 	}
 
 

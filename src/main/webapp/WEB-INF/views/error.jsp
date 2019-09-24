@@ -3,10 +3,10 @@
 
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags"%>
 
-<tags:pageTemplate titulo="E-commerce.">
+<tags:pageTemplate>
 
 	<section id="index-section" class="container middle">
-		<h1>Erro genérico acontecendo!!!</h1>
+		<h1>Ops! Algo deu errado.</h1>
 		
     <!-- 
         Mensagem: ${exception.message}

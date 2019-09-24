@@ -13,22 +13,67 @@ public class Comentario {
     private Calendar dataComentario;
 	
 	private String comentario;
+	
+	private String usuarioEmail;
+	
+	
+	
+
+
 
 	public Calendar getDataComentario() {
 		return dataComentario;
 	}
 
-	public String getComentario() {
-		return comentario;
-	}
+
+
+
+
 
 	public void setDataComentario(Calendar dataComentario) {
 		this.dataComentario = dataComentario;
 	}
 
+
+
+
+
+
+	public String getComentario() {
+		return comentario;
+	}
+
+
+
+
+
+
 	public void setComentario(String comentario) {
 		this.comentario = comentario;
 	}
+
+
+
+
+
+
+	public String getUsuarioEmail() {
+		return usuarioEmail;
+	}
+
+
+
+
+
+
+	public void setUsuarioEmail(String usuarioEmail) {
+		this.usuarioEmail = usuarioEmail;
+	}
+
+
+
+
+
 
 	@Override
 	public String toString() {

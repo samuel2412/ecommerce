@@ -1,7 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%@ attribute name="titulo" required="true"%>
 <%@ attribute name="bodyClass" required="false"%>
 <%@ attribute name="extraScripts" fragment="true"%>
 
