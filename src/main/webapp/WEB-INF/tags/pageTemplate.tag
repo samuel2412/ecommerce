@@ -27,8 +27,6 @@
   <!-- Custom styles for this template -->
   <link href="${contextPath }resources/css/shop-homepage.css" rel="stylesheet">
   
-
-
    
 
 

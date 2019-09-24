@@ -40,7 +40,7 @@
           <div class="carousel-inner" role="listbox">
           	<c:forEach items="${lastAdd }" var="produto" varStatus="status">
        
-          	<c:if test="${status.index == '0'}">
+          	<c:if test="${status.index == '2'}">
           		<div class="carousel-item active">
               <img class="d-block img-fluid" src="${produto.imagem }" alt="${produto.nome }" style="width:900px;height:350px;">
             </div>
@@ -52,7 +52,7 @@
             </div>
           	</c:if>
           	
-          	<c:if test="${status.index == '2'}">
+          	<c:if test="${status.index == '0'}">
           		<div class="carousel-item">
               <img class="d-block img-fluid" src="${produto.imagem }" alt=${produto.nome } style="width:900px;height:350px;">
             </div>

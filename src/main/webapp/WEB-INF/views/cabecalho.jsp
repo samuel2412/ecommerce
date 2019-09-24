@@ -19,16 +19,23 @@
             <a class="nav-link" href='<c:url value="/" />'><fmt:message key="menu.home"/>
             </a>
           </li>
+           <security:authorize access="hasRole('ROLE_ADMIN')">
           <li class="nav-item">
             <a class="nav-link" href='<c:url value="/produto/cadastro" />'><fmt:message key="menu.cadastro_produto"/></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href='<c:url value="/produto/" />'><fmt:message key="menu.lista_produto"/></a>
           </li>
+          </security:authorize>
           <li class="nav-item">
             <a class="nav-link" href='<c:url value="/carrinho" />'><s:message code="menu.carrinho" arguments="${carrinhoCompras.quantidade}" /></a>
           </li>
-         
+          
+          <security:authorize access="!isAuthenticated()">
+           <li class="nav-item">
+            <a class="nav-link" href='<c:url value="/login" />'>Login</a>
+          </li>
+         </security:authorize>
           
           <security:authorize access="isAuthenticated()">
            <li class="nav-item">

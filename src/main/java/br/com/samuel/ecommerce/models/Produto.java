@@ -1,15 +1,18 @@
 package br.com.samuel.ecommerce.models;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
 
 @Entity
 public class Produto {
@@ -27,6 +30,8 @@ public class Produto {
 	@DateTimeFormat
     private Calendar dataAnuncio;
 	
+	@ElementCollection
+	private List<Comentario> precos = new ArrayList<>();
 	
 	
 
@@ -102,6 +107,18 @@ public class Produto {
 	}
 	
 	
+
+	public List<Comentario> getPrecos() {
+		return precos;
+	}
+
+
+
+	public void setPrecos(List<Comentario> precos) {
+		this.precos = precos;
+	}
+
+
 
 	@Override
 	public String toString() {
