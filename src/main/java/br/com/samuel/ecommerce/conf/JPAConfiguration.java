@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class JPAConfiguration {
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource, Properties additionalProperties) {
 
         LocalContainerEntityManagerFactoryBean factoryBean = 
             new LocalContainerEntityManagerFactoryBean();
@@ -44,6 +44,8 @@ public class JPAConfiguration {
         return dataSource;
     }
 
+    @Bean
+    @Profile("dev")
     private Properties additionalProperties() {
         Properties props = new Properties();
         props.setProperty("hibernate.dialect", 
