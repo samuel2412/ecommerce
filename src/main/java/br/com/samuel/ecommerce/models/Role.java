@@ -17,11 +17,14 @@ public class Role implements GrantedAuthority {
 	private int id;
     
     private String nome;
+    
+    public Role() {
 
-    public Role(){
-	}
-    
-    
+    }
+
+    public Role(String nome) {
+        this.nome = nome;
+    }
 
 	public int getId() {
 		return id;
@@ -33,11 +36,6 @@ public class Role implements GrantedAuthority {
 		this.id = id;
 	}
 
-
-
-	public Role(String nome) {
-	  this.nome = nome;
-	}
 
 	public String getNome() {
         return nome;

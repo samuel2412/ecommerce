@@ -34,6 +34,7 @@ public class SecurityConfiguration
 	    .antMatchers("/carrinho/**").permitAll()     
 	    .antMatchers("/pagamento/**").permitAll()
 	    .antMatchers("/usuario/**").permitAll()
+	    .antMatchers("//url-magica-maluca-oajksfbvad6584i57j54f9684nvi6554358efnoewfm3545nvowefno5522eijn").permitAll()
 	    .antMatchers("/").permitAll()
 //	    .antMatchers("/produto/cadastro").hasRole("ADMIN")
 //        .antMatchers("/carrinho/**").permitAll()        
