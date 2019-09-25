@@ -83,7 +83,17 @@
 		</table>
 	</div>
 
-<%@ include file="/WEB-INF/views/rodape.jsp"%>
+<div class="footer">
+		<div class="container">
+			<p class="m-0 text-center text-black">Copyright &copy; E-commerce
+				2019</p>
+			<p class="m-0 text-center text-black">
+				<a href="?locale=pt"><fmt:message key="rodape.pt" /></a> - <a
+					href="?locale=en_US"><fmt:message key="rodape.en" /></a>
+			</p>
+			</div>
+		</div>
+	
 
 </body>
 

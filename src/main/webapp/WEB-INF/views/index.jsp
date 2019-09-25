@@ -60,19 +60,22 @@
        
           	<c:if test="${status.index == '2'}">
           		<div class="carousel-item active">
-              <img class="d-block img-fluid" src="${produto.imagem }" alt="${produto.nome }" style="width:900px;height:350px;">
+          		 <a href="${s:mvcUrl('PC#detalhe').arg(0, produto.id).build() }">
+               <img class="d-block img-fluid" src="${produto.imagem }" alt="${produto.nome }" style="width:900px;height:350px;"> </a>
             </div>
           	</c:if>
           	
           <c:if test="${status.index == '1'}">
           		<div class="carousel-item">
-              <img class="d-block img-fluid" src="${produto.imagem }" alt=${produto.nome } style="width:900px;height:350px;">
+          		 <a href="${s:mvcUrl('PC#detalhe').arg(0, produto.id).build() }">
+              <img class="d-block img-fluid" src="${produto.imagem }" alt=${produto.nome } style="width:900px;height:350px;"> </a>
             </div>
           	</c:if>
           	
           	<c:if test="${status.index == '0'}">
           		<div class="carousel-item">
-              <img class="d-block img-fluid" src="${produto.imagem }" alt=${produto.nome } style="width:900px;height:350px;">
+          		 <a href="${s:mvcUrl('PC#detalhe').arg(0, produto.id).build() }">
+              <img class="d-block img-fluid" src="${produto.imagem }" alt=${produto.nome } style="width:900px;height:350px;"> </a>
             </div>
           	</c:if>
           	

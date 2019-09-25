@@ -38,6 +38,8 @@ public class ProdutosController {
 	@CacheEvict(value="produtosHome", allEntries=true)
 	public ModelAndView gravar(@Valid Produto produto, BindingResult result, RedirectAttributes redirectAttributes) {
 
+		System.out.println(produto.toString());
+		
 		if (result.hasErrors()) {
 			return form(produto);
 		}

@@ -52,7 +52,7 @@ public class ProdutosControllerTest {
             .andExpect(MockMvcResultMatchers
                 .model().attributeExists("produtos"))
             .andExpect(MockMvcResultMatchers
-                .forwardedUrl("/WEB-INF/views/home.jsp"));
+                .forwardedUrl("/WEB-INF/views/index.jsp"));
     }
 
 //    @Test
